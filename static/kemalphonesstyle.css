@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box;
+    overflow: remove; */
+}
+.head::after
+{
+    border:15px solid block; 
+    width: 90%;
+}
+body{
+    margin: 0;
+    background-color: none;
+    /* background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif; */
+}
+.menu-bar
+{
+    background: rgb(red, green, blue);
+    text-align: center;
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: blue;
+}
+.menu-bar ul li
+{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+
+}
+.menu-bar ul li a
+{
+    text-decoration: blue;
+    color: blue;
+}
+.active, .menu-bar ul li:hover
+{
+    background-color: #2bab0d;
+    border-radius: 3px;
+}
+.menu-bar .fa
+{
+    margin-right: 8px;
+}
+
+.sub-menu-1
+{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu-1
+{
+    display: block;
+    position: absolute;
+    background: rgb(red, green, blue);
+    margin-top: 15px;
+    margin-left: -25px;
+}
+.menu-bar ul li:hover .sub-menu-1
+{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul
+{
+    display: block;
+    margin: 25px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li
+{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #000000;
+    border-radius: 2;
+    text-align: left;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover
+{
+    color: aquamarine;
+}
+.fa-angle-right
+{
+    float: right;
+}
+.sub-menu-2
+{
+    display: none;
+}
+.hover-me:hover .sub-menu-2
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 140px;
+    background: #000000;
+}
+.menu-bar ul li:hover .sub-menu-2
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 140px;
+    background: rgb(red, green, blue);
+}
+.menu-bar ul li:hover .sub-menu-2
+{
+    display: block;
+    margin: 15px;
+}
+.menu-bar ul li:hover .sub-menu-2 ul
+{
+    display: block;
+    margin: 25px;
+}
+
+h1 {
+    text-align:center;
+    margin: 0.1rem 0;
+    font-size: 5rem;
+    text-decoration: red;
+    color: red;
+      /* text-decoration-color: red; */
+  }
+
+  h1:hover {
+    color: aqua;
+  }
+
+#contenair 
+{
+    position: relative;
+    display: flex;
+}
+.site-footer .logo-epfl {
+    float: right;
+}
+.logo-epfl {
+    display: block;
+    max-width: 101px;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+feuille de style user-agent
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.site-footer {
+    background-color: #f8f9fa;
+    padding: 3em 0 3em 0;
+    color: #6c757d;
+}  

@@ -1,0 +1,80 @@
+  {% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+  {% if session['modeles'] %}
+  {% for modele in modeles %}
+      <li>{{ modele }}</li>
+  {% endfor %}
+  {% endif %}
+</ul>
+
+<form action="{{ url_for('searchmodel') }}" method="POST">
+  <fieldset>
+        <div>
+        <h3>Les modèles de téléphones sous android:</h3>
+        <div>  
+        <label>
+            <input type="radio" id="phone" value="GalaxieS23" name="modele" />Galaxy S23, S23+, S23 ULTRA et toute série Galaxy</label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" id="phone" value="GooglePixel7" name="modele" />Google Pixel 7 128Go, 256Go, Pixel 6, 6a, 6Pro Pixel 5, Pixel 4 et toute la série des Google phones</label>
+          </div>
+          <div>
+          <label>
+            <input type="radio" id="phone" value="Oppo" name="modele" />Oppo Find X5 Pro</label>
+          </div>
+          <div>
+            <label>
+            <input type="radio" id="phone" value="Xiaomi" name="modele" />Xiaomi 13 Pro, 12 Pro, 5G</label>
+          </div>
+          <div>
+            <label>
+            <input type="radio" id="phone" value="AndroMod" name="modele" />Other model Android</label>
+          </div>
+          <div>
+            <label>Enter phone problems<input type="text" name="Problems" /></label>
+          </div>
+            <ul>
+              <li>
+              <a href="/iOSapp" >Other phone model</a>
+              </li>
+            </ul>
+          <button type="submit">Envoyer</button>
+  </fieldset>
+  </form>
+
+<style>
+  html {
+    font-family: sans-serif;
+  }
+  
+  form {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  fieldset {
+    background: cyan;
+    border: 5px solid blue;
+  }
+  
+  h3 {
+    padding: 10px;
+    background: blue;
+    color: cyan;
+  }
+
+  li.ul:a {
+    margin-bottom: 0.5rem;
+    display: right;
+  }
+  
+</style>
+{% endblock %}

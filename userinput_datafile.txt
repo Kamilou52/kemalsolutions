@@ -1,0 +1,66 @@
+Paulos,Tactile,MaciOS12séries.
+Paulos,Tactile,MaciOS12séries.
+Maria,Test point,MaciOS11séries.
+Ciao,Screen light,AndroMod.
+Ciao,Screen light,AndroMod.
+Abaki,Nappe error,GalaxieS23.
+admin,Nappe error,GalaxieS23.
+admin,Screen,Oppo.
+fname,Oppo,Screen.
+fname,GooglePixel7,Flash.
+fname,GooglePixel7,Flash.
+fname,GooglePixel7,Plaquette.
+fname,Xiaomi,Réinitialiser.
+fname,Xiaomi,Réinitialiser.
+Lalle,GooglePixel7,Ecran.
+Lalle,GooglePixel7,Ecran.
+Yves,None,Cover.
+Yves,None,Cover.
+Samia,AndroMod,Hot.
+Samia,AndroMod,Hot.
+Samia,AndroMod,Hot.
+Igor,MaciOS11séries,Micro.
+Igor,MaciOS11séries,Micro.
+Téuta,Xiaomi,Screen short line.
+Téuta,Xiaomi,Screen short line.
+Félix,ModelMaciOS,Energy.
+Félix,ModelMaciOS,Energy.
+Pele,AndroMod,Sonnerie.
+Pele,AndroMod,Sonnerie.
+Adèle,GooglePixel7,Tactile.
+testpi,Oppo,Ecran tactile.
+test3,GalaxieS23,Tactile.
+Maélise,GooglePixel7,Code.
+Maélise,GooglePixel7,Code.
+Maélise,GooglePixel7,Code.
+Ibrahim,Oppo,contacte service.
+Faouz,Oppo,contacte service.
+Sépo,Oppo,Ecran.
+Sépo,Oppo,Ecran.
+Abi,Oppo,Micro.
+Abi,Oppo,Micro.
+Abi,Oppo,Micro.
+Gnimdou,Oppo,Déco.
+Abdul,GalaxieS23,.
+Abdul,GalaxieS23,.
+Séraphin,Xiaomi,.
+Séraphin,Xiaomi,.
+Serge,Xiaomi,Code Pin.
+Sweta,MaciOS12séries,Screen short line.
+Sweta,MaciOS12séries,Screen short line.
+Sweta,MaciOS12séries,Screen short line.
+Igor,Xiaomi,Pile.
+Igor,Xiaomi,Pile.
+Igor,Xiaomi,Pile.
+Igor,Xiaomi,Pile.
+Igor,Xiaomi,Pile.
+Sympa,Oppo,tactile.
+Sympa,Oppo,tactile.
+Barbara,AndroMod,Ecran.
+Barbara,AndroMod,Ecran.
+Barbara,AndroMod,Ecran.
+Barbara,AndroMod,Ecran.
+Mina,Xiaomi,Ecran tactile.
+Bia,Oppo,Screen.
+Bia,Oppo,Screen.
+Greg,Oppo,Power.

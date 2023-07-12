@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+
+    <ul>
+      {% for modele in modeles %}
+          <li>{{ modele }}</li>
+    </ul>
+    
+    {% block content %}
+<head>
+<title>List userinput</title>
+<!doctype html>
+<html>
+   <body>
+   
+      <table border = 3>
+         <thead>
+            <td>Userinput</td>
+            <td>Modele</td>
+            <td>Problem</td>
+         </thead>
+         
+         {% for session in sessions %}
+            <tr>
+               <td>{{session['userinput']}}</td>
+               <td>{{session['modeles']}}</td>
+               <td> {{ session['problem']}}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+{% endblock %}

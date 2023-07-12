@@ -1,0 +1,11 @@
+    {% extends 'base.html' %}
+
+{% block content %}
+
+<form enctype="multipart/form-data" action = "/upload" method = "post" >
+  <fieldset>
+      <p><input type = text name = username/></p>
+      <p<<input type = submit value = Login/></p>
+</fieldset>
+</form>
+{% endblock %}

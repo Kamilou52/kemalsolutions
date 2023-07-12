@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>User Input</title>
+<h1> Welcome {{user}} ! </h1>
+<form action = "/userinput" method = "POST">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+    <button type="submit">Envoyer</button>
+  </form>
+   <p>
+    Our clients are any persons 
+   </p>
+   <p>
+    owner of cellular phones
+   </p>
+   <p>
+    android model
+   </p>
+   <p>
+    or iOS model.
+   </p>
+   <p>
+    Any other person interested by
+    </p>
+    <p>
+    any programing language can found it with us!
+    </p>
+ <div>
+{% endblock %}

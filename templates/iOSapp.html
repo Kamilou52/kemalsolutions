@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+<ul>
+  {% for modele in modeles %}
+      <li>{{ modele }}</li>
+  {% endfor %}
+</ul>
+
+{% block content %}
+<form action="{{ url_for('searchmodelmac') }}" method="POST">
+  <fieldset>
+        <div>
+        <h3>Quel modèle d'iOS avez-vous :</h3>
+        <div>
+          <label>
+          <input type="radio" id="phone" name="modele" value="MaciOS14séries" />iPhone 14 Pro, 14 Pro Max et toutes séries des iPhones de cette game</label>
+        </div>
+        <div>
+          <label>
+          <input type="radio" id="phone" name="modele" value="MaciOS13séries" />iPhone 13 mini, 13, 13 Pro, 13 Pro Max et toutes séries des iPhones de cette game</label>
+        </div>
+          <div>
+          <label>
+          <input type="radio" id="phone" name="modele" value="MaciOS12séries" />iPhone 12, 12 mini, 12 Pro, 12 Pro Max et toutes séries des iPhones de cette game</label>
+        </div>
+          <div>
+          <label>
+          <input type="radio" id="phone" name="modele" value="MaciOS11séries" />iPhone 11, 11 Pro, 11 Pro Max et toutes séries des iPhones de cette game.</label>
+        </div>
+        <div>
+          <label>
+          <input type="radio" id="phone" name="modele" value="ModelMaciOS" />Other MaciOS séries</label>
+        </div>
+        <div>
+          <label>Enter phone problems<input type="text" name="Problems" /></label>
+        </div>
+        <button type="submit">Envoyer</button>
+  </fieldset>
+</form>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      
+      form {
+        width: 600px;
+        margin: 0 auto;
+      }
+      
+      div {
+        margin-bottom: 10px;
+      }
+      
+      fieldset {
+        background: cyan;
+        border: 5px solid blue;
+      }
+      
+      h3 {
+        padding: 10px;
+        background: blue;
+        color: cyan;
+      }
+      
+    </style>
+{% endblock %}
