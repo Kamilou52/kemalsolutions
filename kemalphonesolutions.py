@@ -82,7 +82,8 @@ def searchmodel():
             f.write('\n') 
         
         store(session['userinput'],modele,Problems)
-        #list[(session['userinput'],modele,Problems)]
+        
+        # list(session.int['userinput'])
         
         print (session['userinput'])
         print (session['modeles'])
@@ -120,7 +121,7 @@ def searchmodelmac():
             
         store(session['userinput'],modele,Problems)
         
-        list(session['userinput'])
+        # list(session.int['userinput'])
         
         print (session['userinput'])
         print (session['modeles'])

@@ -64,3 +64,6 @@ Mina,Xiaomi,Ecran tactile.
 Bia,Oppo,Screen.
 Bia,Oppo,Screen.
 Greg,Oppo,Power.
+Maxime,Oppo,Nappe.
+Maxime,Oppo,Nappe.
+Maxime,Oppo,Nappe.
