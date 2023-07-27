@@ -108,7 +108,7 @@ def store(userinput,modele,problem):
     data=[userinput, modele, problem ]
 
     val = conn.execute('insert into userinput (fname, modele, problem, created ) values (?,?,?,datetime())', data)
-    print (val)
+    # print (val)
 
     conn.commit()
 
@@ -147,12 +147,9 @@ def liste():
 def search_userinput():
      conn = get_db_connection()
      # filtre ='%'+modele+"%"
-     resultat = conn.execute('select * from userinput , sqlite_sequence where id = seq ', [filtre,]).fetchall()
+     resultat = conn.execute('select * from userinput , sqlite_sequence where id = seq ').fetchall()
 
      conn.close()
-
-     if modele is None:
-         abort(404)
 
      return render_template('indexkemalphones.html', userinputs=resultat)
 
