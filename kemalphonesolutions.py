@@ -18,18 +18,18 @@ def get_db_connection():
 
 @app.route('/')
 def home_page():
-    
+
     return render_template('indexkemalphones.html')
 
 @app.route("/contactus")
 def send():
-    
+
     return render_template('contactus.html')
 
 @app.route("/testing")
 def seetest():
     return render_template("testing.html")
-    
+
 @app.route("/flutterapp")
 def view():
     return render_template("flutterapp.html")
@@ -43,7 +43,7 @@ def seeuser():
     if request.method == 'POST':
         session['userinput'] = request.form['fname']
         return render_template("androidapp.html")
-    
+
     return render_template('userinput.html')
 
 # @app.route('/upload', methods=['GET', 'POST'])
@@ -51,7 +51,7 @@ def seeuser():
 #      if request.method == 'POST':
 #         file = request.files['the_file']
 #         file.save('/var/www/uploads/uploaded_file.txt')
-#         #file.save(f"/var/www/uploads/{secure_filename(file.filename)}")    
+#         #file.save(f"/var/www/uploads/{secure_filename(file.filename)}")
 # redirect(url_for("searchmodelmac"))
 
 @app.route('/androidapp', methods=['GET', 'POST'])
@@ -65,32 +65,17 @@ def searchmodel():
         session.pop('modeles', None)
         Problems=request.form.get("Problems")
         session.pop('problem', None)
-        
-        
+
+
         session['fname'] = fname
         session['modeles'] = modele
         session['problem'] = Problems
-        
-        with open('userinput_datafile.txt', "a") as f:
-                
-            f.write(session['userinput'])
-            f.write(',')
-            f.write(str(modele))
-            f.write(',')
-            f.write(str(Problems))
-            f.write('.')
-            f.write('\n') 
-        
         store(session['userinput'],modele,Problems)
-        
-        # list(session.int['userinput'])
-        
-        print (session['userinput'])
-        print (session['modeles'])
-        print (session['problem'])
-       
-        return render_template('indexkemalphones.html', modele=modeles)
- 
+
+        return search_userinput()
+
+        # return render_template('indexkemalphones.html', modele=modeles)
+
     return render_template("androidapp.html")
 
 @app.route("/iOSapp", methods=['GET', 'POST'])
@@ -104,60 +89,42 @@ def searchmodelmac():
         session.pop('modeles', None)
         Problems=request.form.get("Problems")
         session.pop('problem', None)
-        
+
         session['fname'] = fname
         session['modeles'] = modele
         session['problem'] = Problems
-        
-        with open('userinput_datafile.txt', "a") as f:
-                
-            f.write(session['userinput'])
-            f.write(',')
-            f.write(str(modele))
-            f.write(',')
-            f.write(str(Problems))
-            f.write('.')
-            f.write('\n') 
-            
+
         store(session['userinput'],modele,Problems)
-        
-        # list(session.int['userinput'])
-        
-        print (session['userinput'])
-        print (session['modeles'])
-        print (session['problem'])
-       
-        
-        return render_template("indexkemalphones.html", modele=modeles)
- 
+
+        return search_userinput()
+        # return render_template("indexkemalphones.html", modele=modeles)
+
     return render_template("iOSapp.html")
 
 
 def store(userinput,modele,problem):
     conn = get_db_connection()
-    
+
     data=[userinput, modele, problem ]
-  
+
     val = conn.execute('insert into userinput (fname, modele, problem, created ) values (?,?,?,datetime())', data)
-    print (val)
-   
+    # print (val)
+
     conn.commit()
-    
+
     conn.close()
     if userinput is None:
         abort(404)
-    
+
     return userinput
 
 @app.route('/indexkemalphones', methods=["GET", "POST"])
-def list(userinput):
-    print ('on passe')
+def liste():
+
     conn = get_db_connection()
-    userinput = conn.execute('SELECT * FROM userinput').fetchall() 
-    
-    print (userinput['fname'])
+    resultat = conn.execute('SELECT * FROM userinput').fetchall()
     conn.close()
-    return render_template('indexkemalphones.html', userinputs=userinput)
+    return render_template('indexkemalphones.html', userinputs=resultat)
 
 # def list(userinput):
 #     conn = get_db_connection()
@@ -166,10 +133,10 @@ def list(userinput):
     # value = conn.execute('SELECT * FROM userinput ',
     #                     (userinput,)).fetchone()
     # print(value)
-    
+
     # print(data)
 #     print(userinput1)
-        
+
     # conn.close()
     # if userinput is None:
     #     abort(404)
@@ -177,21 +144,16 @@ def list(userinput):
 
 # List userinputs with filter
 
-def search_userinput(modele):
+def search_userinput():
      conn = get_db_connection()
-     filtre ='%'+modele+"%"
-     modele = conn.execute('SELECT * FROM database WHERE modele like ?', [filtre,]).fetchall()
-     
-     print(modele)
-     
+     # filtre ='%'+modele+"%"
+     resultat = conn.execute('select * from userinput , sqlite_sequence where id = seq ').fetchall()
+
      conn.close()
 
-     if modele is None:
-         abort(404)
-    
-     return modele
- 
- 
+     return render_template('indexkemalphones.html', userinputs=resultat)
+
+
 
 # def get_list_userinput_connection():
 #     conn = sqlite3.connect('static/list_userinput.txt')
@@ -203,11 +165,11 @@ def search_userinput(modele):
 #     sql = sqlite3
 #     conn = sql.connect('templates/userinput_list')
 #     conn.session_factory = sql.Session
-   
+
 #     cur = conn.cursor()
 #     value = conn.execute('SELECT * FROM userinput WHERE id = ?',
 #                          (userinput,)).fetchone()
-#     sessions = cur.fetchall(); 
+#     sessions = cur.fetchall();
 #     return render_template("userinput_list.html",sessions = sessions)
 
 

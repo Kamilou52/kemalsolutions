@@ -67,3 +67,14 @@ Greg,Oppo,Power.
 Maxime,Oppo,Nappe.
 Maxime,Oppo,Nappe.
 Maxime,Oppo,Nappe.
+Pierre,GooglePixel7,Bluetooth.
+Pierre,GalaxieS23,autre.
+Pierre,MaciOS13séries,ios.
+Pierre,MaciOS13séries,ios.
+Pierre,MaciOS13séries,ios.
+Paul,GooglePixel7,écran.
+Andre,GalaxieS23,Storage.
+Andre,Oppo,.
+Andre,Oppo,test.
+Andre,AndroMod,Vitre.
+Andre,Xiaomi,.

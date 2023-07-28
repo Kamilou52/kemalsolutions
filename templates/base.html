@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>{% block title %} {% endblock %}</title>
-  
+
   </head>
   <center><i><img src="{{ url_for('static',filename='kemalrepairphones.png') }}" alt="logo" heigh="250" width="250"></i></center>
   <body>
-  
+
     <div class="container">
        </div>
         <div class="menu-bar">
@@ -25,11 +25,11 @@
           <div class="sub-menu-1">
               <ul>
                   <li><a href="{{ url_for('viewmis') }}">Mission</a></li>
-                  
+
                   <li><a href="{{ url_for('viewvis') }}">Vision</a></li>
                   <li><a href="{{ url_for('viewte') }}">Team</a></li>
                   <li><a href="{{ url_for('viewcong') }}">Congratulations</a></li>
-              </ul> 
+              </ul>
           </div>
           </li>
           <li><a href="#"><i class="fa fa-clone"></i>Services</a>
@@ -60,6 +60,7 @@
           </div>
           </li>
           <li><a href="{{ url_for('seeuser') }}"><i class="fa fa-users"></i>User Input</a></li>
+          <li><a href="{{ url_for('liste') }}"><i class="fa fa-users"></i>Liste User</a></li>
           <li><a href="#"><i class="fa fa-angellist"></i>Investers</a></li>
           <li><a href="#"><i class="fa fa-inr"></i>Pricing</a></li>
           <li><a href="#"><i class="fa fa-edit"></i>Training</a>
@@ -77,14 +78,14 @@
                       </ul>
                   </div>
               </li>
-                  <li><a href="#">UI Designing></li>  
+                  <li><a href="#">UI Designing></li>
               </ul>
               </div>
           </li>
           <li><a href="{{ url_for('send') }}"><i class="fa fa-phone"></i>Contact Us</a>
           </li>
           </div>
-          </ul>  
+          </ul>
           </div>
           {% block content %} {% endblock %}
           <script src="{{ url_for('static',filename='kemalphonesolutions.js') }}"></script>
@@ -105,12 +106,12 @@
                         <a class="nav-link" href="/faqs">FAQs</a>
                       </li>
                     </ul>
-                    <span>Copyright 2023 &copy; EPFL/<i> 
+                    <span>Copyright 2023 &copy; EPFL/<i>
                   <img width="100.0" height="24.7" src="https://powerhouse-lausanne.ch/wp-content/uploads/2022/11/adaflow-byPowerhouse.jpg" class="attachment-full size-full" alt="adaflow logo" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="https://adaflow.ch/"></a></div>
                     </i></span>
                   </div>
                     <a href="https://www.epfl.ch"></a><img class="logo-epfl" alt="EPFL Extension School" src="https://d3rt91u8ecpt22.cloudfront.net/assets/logo-epfl-b3b34c083109f9ae09249690344f29de85373ed5a25310401be0d4339c6b7b5d.svg" />
-          
+
                 </div>
               </div>
             </footer>
@@ -122,14 +123,14 @@
               <button class="cta cta--primary cta--small dropdown-button"><a href="{{ url_for('send') }}">
                 Inscription
             </button>
-            </div> 
+            </div>
             <style>
-              .top-bun, 
-              .patty, 
+              .top-bun,
+              .patty,
               .bottom-bun {
                 height: 1px;
               }
-            </style> 
+            </style>
 
   </body>
 </html>
