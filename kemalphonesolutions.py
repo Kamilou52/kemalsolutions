@@ -189,7 +189,7 @@ def viewte():
 def viewcong():
     return render_template("congratulations.html")
 
-@app.route("/socialmedia")
+@app.route("/visit")
 def visit():
     return render_template("socialmedia.html")
 
