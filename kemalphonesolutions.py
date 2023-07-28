@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, session, url_for, request, redirect, abort
+from flask import Flask, g, render_template, session, url_for, request, redirect, make_response, abort
 from flask_session import Session
 from werkzeug.exceptions import abort
 from werkzeug.utils import secure_filename
@@ -18,8 +18,14 @@ def get_db_connection():
 
 @app.route('/')
 def home_page():
-
-    return render_template('indexkemalphones.html')
+    # fname = request.args.get("userinput")
+    # if fname == request.cookies.get('fname'):
+    #     resp = make_response(render_template(...))
+    #     resp.set_cookie('fname', 'the fname')
+        return render_template('indexkemalphones.html')
+    
+    # return resp
+    
 
 @app.route("/contactus")
 def send():
