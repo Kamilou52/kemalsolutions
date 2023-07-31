@@ -18,13 +18,13 @@ def get_db_connection():
 
 @app.route('/')
 def home_page():
-    # fname = request.args.get("userinput")
-    # if fname == request.cookies.get('fname'):
-    #     resp = make_response(render_template(...))
-    #     resp.set_cookie('fname', 'the fname')
+    fname = request.args.get("userinput")
+    if fname == request.cookies.get('fname'):
+        resp = make_response(render_template('indexkemalphones.html'))
+        resp.set_cookie('fname', 'the fname')
         return render_template('indexkemalphones.html')
     
-    # return resp
+    return resp
     
 
 @app.route("/contactus")
@@ -52,14 +52,6 @@ def seeuser():
 
     return render_template('userinput.html')
 
-# @app.route('/upload', methods=['GET', 'POST'])
-# def upload_file():
-#      if request.method == 'POST':
-#         file = request.files['the_file']
-#         file.save('/var/www/uploads/uploaded_file.txt')
-#         #file.save(f"/var/www/uploads/{secure_filename(file.filename)}")
-# redirect(url_for("searchmodelmac"))
-
 @app.route('/androidapp', methods=['GET', 'POST'])
 def searchmodel():
     if request.method == "POST":
@@ -79,8 +71,6 @@ def searchmodel():
         store(session['userinput'],modele,Problems)
 
         return search_userinput()
-
-        # return render_template('indexkemalphones.html', modele=modeles)
 
     return render_template("androidapp.html")
 
@@ -103,7 +93,7 @@ def searchmodelmac():
         store(session['userinput'],modele,Problems)
 
         return search_userinput()
-        # return render_template("indexkemalphones.html", modele=modeles)
+      
 
     return render_template("iOSapp.html")
 
@@ -114,7 +104,7 @@ def store(userinput,modele,problem):
     data=[userinput, modele, problem ]
 
     val = conn.execute('insert into userinput (fname, modele, problem, created ) values (?,?,?,datetime())', data)
-    # print (val)
+    
 
     conn.commit()
 
@@ -132,52 +122,14 @@ def liste():
     conn.close()
     return render_template('indexkemalphones.html', userinputs=resultat)
 
-# def list(userinput):
-#     conn = get_db_connection()
-#     userinput1 = userinput1.query.filter_by(fname='testuser').first()
-    # data=[userinput ]
-    # value = conn.execute('SELECT * FROM userinput ',
-    #                     (userinput,)).fetchone()
-    # print(value)
-
-    # print(data)
-#     print(userinput1)
-
-    # conn.close()
-    # if userinput is None:
-    #     abort(404)
-#     return userinput[1]
-
-# List userinputs with filter
-
 def search_userinput():
      conn = get_db_connection()
-     # filtre ='%'+modele+"%"
+    
      resultat = conn.execute('select * from userinput , sqlite_sequence where id = seq ').fetchall()
 
      conn.close()
 
      return render_template('indexkemalphones.html', userinputs=resultat)
-
-
-
-# def get_list_userinput_connection():
-#     conn = sqlite3.connect('static/list_userinput.txt')
-#     conn.row_factory = sqlite3.Row
-#     return conn
-
-# @app.route('/userinput_list')
-# def list(userinput):
-#     sql = sqlite3
-#     conn = sql.connect('templates/userinput_list')
-#     conn.session_factory = sql.Session
-
-#     cur = conn.cursor()
-#     value = conn.execute('SELECT * FROM userinput WHERE id = ?',
-#                          (userinput,)).fetchone()
-#     sessions = cur.fetchall();
-#     return render_template("userinput_list.html",sessions = sessions)
-
 
 @app.route("/mission")
 def viewmis():

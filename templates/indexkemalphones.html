@@ -2,22 +2,7 @@
 
 {% block content %}
 <h1> EL Kémal phones solutions! </h1>
-    <h2></h2>
-<table style="width:100%">
-  <tr>
-    <th>First Name</th>
-    <th>Model</th>
-    <th>Problem</th>
-  </tr>
-</table>
-
-<style>
-  table, th {
-    border:1px solid black;
-  }
-</style>
-
-    {% for userinput in userinputs %}
+  {% for userinput in userinputs %}
 
     <div class="mc-modal-bg" data-dojo-attach-point="modalOverlay" style="display: block; opacity: 0.11;"></div>
     <span class="badge badge-warning"><i class="fa fa-user"></i>Utilisateur</span>
