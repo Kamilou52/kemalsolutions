@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, g, render_template, session, url_for, request, redirect, make_response, abort
+from flask import Flask, g, render_template, session, url_for, request, redirect, make_response, abort, jsonify
 from flask_session import Session
 from werkzeug.exceptions import abort
 from werkzeug.utils import secure_filename
@@ -25,6 +25,20 @@ def home_page():
         return render_template('indexkemalphones.html')
     
     return resp
+
+@app.route("/me")
+def me_api():
+    userinput = seeuser('userinput')
+    return {
+        "fname": userinput.fname,
+        "modele": userinput.modele,
+        "problem": url_for("seeuser", filename=seeuser),
+    }
+
+@app.route("/userinput_list")
+def users_api():
+    userinputs = seeuser()
+    return jsonify([userinput.to_json() for userinput in userinputs])
     
 
 @app.route("/contactus")
