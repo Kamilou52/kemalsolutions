@@ -13,33 +13,29 @@
 <html>
    <body>
    
-      <table border = 3 style="width:100%">
-         <thead>
-            <td>Userinput</td>
-            <td>Modele</td>
-            <td>Problem</td>
-         </thead>
-         
-         {% for session in sessions %}
-            <tr>
-               <td>{{session['fname']}}</td>
-               <td>{{session['modele']}}</td>
-               <td> {{ session['problem']}}</td>	
-            </tr>
+   <table border = 3 id="table2" style="width:100%">
+      <caption style="caption-side:bottom"></caption>
+
+      {% for userinput in userinputs %}
+
+      {{userinput['fname'] }}
+            
          {% endfor %}
-      </table>
-      <table >
-         <tr>
-           <th>{{session['fname']}}</th>
-           <th>{{session['modele']}}</th>
-           <th>{{session['problem']}}</th>
-         </tr>
-       </table>
-       
-       <style>
+     {{ userinput['fname'] }} - {{ userinput['modele']}} - {{userinput['problem'] }}
+      <tr>
+         <td> {{ userinput['fname'] }}</td>
+      </tr>
+      <tr>
+         <td>{{ userinput['modele']}}</td>
+      </tr>
+      <tr>
+         <td> {{userinput['problem'] }}</td>	
+      </tr>
+
+      <style>
          table, th {
            border:1px solid black;
          }
        </style>
-       {{ userinput['fname'] }} - {{ userinput['modele']}}, {{userinput['problem'] }}
+   </table>
 {% endblock %}

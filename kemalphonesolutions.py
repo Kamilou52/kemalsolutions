@@ -80,7 +80,7 @@ def searchmodel():
 
 
         session['fname'] = fname
-        session['modeles'] = modele
+        session['modele'] = modele
         session['problem'] = Problems
         store(session['userinput'],modele,Problems)
 
@@ -101,7 +101,7 @@ def searchmodelmac():
         session.pop('problem', None)
 
         session['fname'] = fname
-        session['modeles'] = modele
+        session['modele'] = modele
         session['problem'] = Problems
 
         store(session['userinput'],modele,Problems)
