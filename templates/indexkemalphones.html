@@ -11,10 +11,7 @@
 {% block content %}
 <h1> EL Kémal phones solutions! </h1>
     <h2></h2>
-
- 
-
-    <div class="mc-modal-bg" data-dojo-attach-point="modalOverlay" style="display: block; opacity: 0.11;"></div>
+<div class="mc-modal-bg" data-dojo-attach-point="modalOverlay" style="display: block; opacity: 0.11;"></div>
   
     <table style="width:50%">
      
@@ -28,6 +25,11 @@
       table, th {
         border:1px solid black;
       }
+
+      table, td {
+        border:1px solid;
+        border-collapse: collapse;
+      }
     </style>
     
 
@@ -39,9 +41,6 @@
       <td> {{userinput['modele'] }}</td>
       <td> {{userinput['problem'] }}</td>	
    </tr>
-
- 
-
 
 {% endfor %}
 
