@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='kemalphonesstyle.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='kemalphonesstyle.css') }}" />
+<title>{% block title %} {% endblock %}</title>
 
   </head>
   <center><i><img src="{{ url_for('static',filename='kemalrepairphones.png') }}" alt="logo" heigh="250" width="250"></i></center>
   <body>
 
-    <div class="container">
+    <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-rocket"></i>
+        <div class="container">
        </div>
         <div class="menu-bar">
           <ul>
@@ -52,7 +55,7 @@
           </div>
           </li>
           <li><a href="{{ url_for('seeuser') }}"><i class="fa fa-users"></i>User Input</a></li>
-          <li><a href="{{ url_for('liste') }}"><i class="fa fa-users"></i>List Users</a></li>
+          <li><a href="{{ url_for('liste') }}"><i class="fa fa-list"></i>List Users</a></li>
           <div class="sub-menu-1">
               <ul>
                   <div class="sub-menu-2">
@@ -68,6 +71,8 @@
           </div>
           </ul>
           </div>
+        </nav>
+        </header>
           {% block content %} {% endblock %}
           <script src="{{ url_for('static',filename='kemalphonesolutions.js') }}"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -87,22 +92,15 @@
                         <a class="nav-link" href="/faqs">FAQs</a>
                       </li>
                     </ul>
-                    <span>Copyright 2023 &copy; EPFL/<i>
-                  <img width="100.0" height="24.7" src="https://powerhouse-lausanne.ch/wp-content/uploads/2022/11/adaflow-byPowerhouse.jpg" class="attachment-full size-full" alt="adaflow logo" /></a></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="https://adaflow.ch/"></a></div>
+                    <span>Copyright 2023 & copy; EPFL / <i>
+                  <img width="45.0" height="24.7" src="https://powerhouse-lausanne.ch/wp-content/uploads/2022/11/adaflow-byPowerhouse.jpg" class="attachment-full size-full" alt="adaflow logo" /></a><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"><a href="https://adaflow.ch/"></a></div>
                     </i></span>
                   </div>
-                    <a href="https://www.epfl.ch"></a><img class="logo-epfl" alt="EPFL Extension School" src="https://d3rt91u8ecpt22.cloudfront.net/assets/logo-epfl-b3b34c083109f9ae09249690344f29de85373ed5a25310401be0d4339c6b7b5d.svg" />
+<a href="https://www.epfl.ch"></a><img class="logo-epfl" alt="EPFL Extension School" width="35.0" height="24.7" display="center" src="https://d3rt91u8ecpt22.cloudfront.net/assets/logo-epfl-b3b34c083109f9ae09249690344f29de85373ed5a25310401be0d4339c6b7b5d.svg" />
   </div>
 </div>
   </footer>
 <div class="showOnDesktop"></div>
-<style>
-              .top-bun,
-              .patty,
-              .bottom-bun {
-                height: 0.5px;
-              }
-            </style>
 
-  </body>
+</body>
 </html>

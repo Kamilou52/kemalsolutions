@@ -1,8 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    /* box-sizing: border-box;
-    overflow: remove; */
 }
 .head::after
 {
@@ -12,15 +10,43 @@
 body{
     margin: 0;
     background-color: none;
+    font-family: sans-serif;
     /* background-image: url(background.jpg);
     background-size: cover;
     background-position: center;
     font-family: sans-serif; */
 }
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    background: rgb(19, 104, 158);
+    color: #fff;
+    padding: 0 2rem;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1rem;
+}
+
 .menu-bar
 {
+    display: flex;
     background: rgb(red, green, blue);
+    justify-content: space-between;
     text-align: center;
+    width: 1750px;
 }
 .menu-bar ul{
     display: inline-flex;
@@ -38,6 +64,19 @@ body{
 {
     text-decoration: blue;
     color: blue;
+}
+.btn {
+    border: 0;
+    background: pink;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.btn.btn-secondary {
+    background: transparent;
+    border: 2px solid pink;
+    color: #fff;
 }
 .active, .menu-bar ul li:hover
 {
@@ -167,6 +206,91 @@ img {
 
 /* Make my Webapp responsive   */
 
+@media all and (max-width: 991px) {
+
+    header {
+        background: transparent;
+    }
+    .logo {
+        position: relative;
+        z-index: 20;
+    }
+    .ouvrir {
+        display: block;
+    }
+
+    .fermer {
+        display: none;
+    }
+
+    .open .ouvrir {
+        display: none;
+    }
+
+    .open .fermer {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        transform: translateX(-100%);
+        transition: transform 1s;
+    }
+
+    .menu li a {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 2rem;
+    }
+
+    .open .menu {
+        transform: translateX(0);
+    }
+}
+
+/* .site .footer
+{
+	margin: 0 ;
+	padding-right: 10px ;
+	line-height: 30px ;
+	text-align: right ;
+	color: 
+#8a0 ;
+}
+
+pre
+{
+	overflow: auto ;
+	background: 
+#dea ;
+	border: 2px solid 
+#9b2 ;
+	padding: 5px 0 0 5px ;
+	font-size: 1.2em ;
+}
+
+pre span
+{
+	color: 
+#560 ;
+}
+
+pre span.comment
+{
+	color: 
+#b30000 ;
+} */
+
 @media (max-width: 500px) 
 {
     .nav-icon img {
@@ -175,4 +299,4 @@ img {
     .nav-icon span {
       font-size: 20px;
     }
-  }
+  } 
