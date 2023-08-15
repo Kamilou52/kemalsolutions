@@ -161,13 +161,6 @@ def viewte():
 def viewcong():
     return render_template("congratulations.html")
 
-@app.route("/visit")
-def visit():
-    return render_template("socialmedia.html")
-
-@app.route("/webdesigning")
-def viewebdes():
-    return render_template("webdesigning.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
