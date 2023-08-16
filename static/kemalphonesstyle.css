@@ -174,7 +174,7 @@ h1 {
     color: aqua;
   }
 
-#contenair 
+#container 
 {
     position: relative;
     display: flex;
@@ -291,7 +291,7 @@ pre span.comment
 #b30000 ;
 } */
 
-@media (max-width: 500px) 
+/* @media (max-width: 500px) 
 {
     .nav-icon img {
       width: 30px;
@@ -299,4 +299,4 @@ pre span.comment
     .nav-icon span {
       font-size: 20px;
     }
-  } 
+  }  */
