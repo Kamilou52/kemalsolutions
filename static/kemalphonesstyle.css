@@ -179,12 +179,12 @@ h1 {
     position: relative;
     display: flex;
 }
-.site-footer .logo-epfl {
+footer.site-footer img.logo-epfl {
     float: right;
 }
-.logo-epfl {
+img.logo-epfl {
     display: block;
-    max-width: 101px;
+    max-width: 20px;
 }
 img {
     vertical-align: middle;
@@ -198,9 +198,9 @@ img {
     overflow-clip-margin: content-box;
     overflow: clip;
 }
-.site-footer {
+footer.site-footer {
     background-color: #f8f9fa;
-    padding: 3em 0 3em 0;
+    padding: 0.5em 0;
     color: #6c757d;
 }
 
@@ -213,7 +213,7 @@ img {
     }
     .logo {
         position: relative;
-        z-index: 20;
+        z-index: 20px;
     }
     .ouvrir {
         display: block;

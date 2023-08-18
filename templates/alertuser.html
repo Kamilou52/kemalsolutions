@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  </head>
+
+  {% extends 'base.html' %}
+
+  {% block content %}
+  <h1> Alert User 
+  
+  <form action = "/userinput" method = "POST">
+    <input role = "alerte">
+      <div class="form-group">
+          <label for="userinput">First name</label>
+          <input type="text" name="fname"
+                 placeholder="Post fname" class="form-control"
+                 value="{{ request.form['userinput'] }}"></input>
+      </div>
+  
+      <div class="form-group">
+          <label for="modele">Phone modele</label>
+          <textarea name="modele" placeholder="Post modele"
+                    class="form-control">{{ request.form['modele'] }}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="Problems">Problem</label>
+        <textarea name="Problems" placeholder="Post Problems"
+                  class="form-control">{{ request.form['problem'] }}</textarea>
+    </div>
+  </form>
+
+    <script>
+    if(window.dialogArguments.fname == "alias" && window.dialogArguments.lname == "dmc"){
+        window.returnValue = true;
+        window.close();
+      }else{
+        window.returnValue = false;
+        window.close();
+      }
+    </script>
+  </h1>
+{% endblock %}

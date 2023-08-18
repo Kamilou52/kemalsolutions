@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, g, render_template, session, url_for, request, redirect, make_response, abort, jsonify
+from flask import Flask, g, render_template, session, url_for, request, flash, redirect, make_response, abort, jsonify
 from flask_session import Session
 from werkzeug.exceptions import abort
 from werkzeug.utils import secure_filename
@@ -46,18 +46,30 @@ def send():
 
     return render_template('contactus.html')
 
-@app.route("/testing")
-def seetest():
-    return render_template("testing.html")
+@app.route('/alertuser', methods=('GET', 'POST'))
+def sendalert():
+    if request.method == 'POST':
+        data=[userinput, modele, Problems ]
+        userinput=request.form.get("fname")  
+        modele=request.form.get("modele")
+        Problems=request.form.get("problem")
 
-@app.route("/flutterapp")
-def view():
-    return render_template("flutterapp.html")
+        if not userinput:
+            flash('fname is required!')
+            if not modele:
+                flash('modele is required!')
+                if not Problems:
+                    flash('problem is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute('insert into userinput (fname, modele, problem, created ) values (?,?,?,datetime())', data)
+            conn.commit()
+            conn.close()
+            return redirect(url_for('indexkemalphones.html'))
 
-@app.route("/ionicapp")
-def viewio():
-    return render_template("ionicapp.html")
+    return render_template('alertuser.html')
 
+    
 @app.route("/userinput", methods=["GET","POST"])
 def seeuser():
     if request.method == 'POST':
@@ -83,10 +95,12 @@ def searchmodel():
         session['modele'] = modele
         session['problem'] = Problems
         store(session['userinput'],modele,Problems)
+        
+    else:
 
-        return search_userinput()
+        return redirect(url_for(home_page()))
 
-    return render_template("androidapp.html")
+    return render_template("indexkemalphones.html")
 
 @app.route("/iOSapp", methods=['GET', 'POST'])
 def searchmodelmac():
@@ -106,10 +120,12 @@ def searchmodelmac():
 
         store(session['userinput'],modele,Problems)
 
-        return search_userinput()
+    else:
+
+        return render_template("iOSapp.html")
       
 
-    return render_template("iOSapp.html")
+    return render_template("indexkemalphones.html")
 
 
 def store(userinput,modele,problem):
