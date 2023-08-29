@@ -26,6 +26,17 @@ def home_page():
     
     return resp
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    fname = request.form.get('fname')
+    
+    if not fname.isalpha():
+        return 'Please enter only alphabetic letters.'
+    
+    # Process the valid input here
+    flash('Input successfully submitted!')
+    return render_template("androidapp.html")
+
 @app.route("/me")
 def me_api():
     userinput = seeuser('userinput')
@@ -46,34 +57,60 @@ def send():
 
     return render_template('contactus.html')
 
-@app.route('/alertuser', methods=('GET', 'POST'))
-def sendalert():
-    if request.method == 'POST':
-        data=[userinput, modele, Problems ]
-        userinput=request.form.get("fname")  
-        modele=request.form.get("modele")
-        Problems=request.form.get("problem")
+# @app.route('/alertuser', methods=('GET', 'POST'))
+# def sendalert():
+#     if request.method == 'POST':
+#         data=[userinput, modele, Problems ]
+#         userinput=request.form.get("fname")  
+#         modele=request.form.get("modele")
+#         Problems=request.form.get("problem")
 
-        if not userinput:
-            flash('fname is required!')
-            if not modele:
-                flash('modele is required!')
-                if not Problems:
-                    flash('problem is required!')
-        else:
-            conn = get_db_connection()
-            conn.execute('insert into userinput (fname, modele, problem, created ) values (?,?,?,datetime())', data)
-            conn.commit()
-            conn.close()
-            return redirect(url_for('indexkemalphones.html'))
+#         if not userinput:
+#             flash('fname is required!')
+#             if not modele:
+#                 flash('modele is required!')
+#                 if not Problems:
+#                     flash('problem is required!')
+#         else:
+#             conn = get_db_connection()
+#             conn.execute('insert into userinput (fname, modele, problem, created ) values (?,?,?,datetime())', data)
+#             conn.commit()
+#             conn.close()
+#             return redirect(url_for('indexkemalphones.html'))
 
-    return render_template('alertuser.html')
+#     return render_template('alertuser.html')
 
+# def isalpha():
+#     conn = get_db_connection()
+#     userinputs = seeuser()
+
+#     if request.method == 'POST':
+#         session['userinput'] = request.form[('fname')]
+#         ['userinput']  == ("fname")
+#         userinput = "fname"
+        
+#         if ['userinput']  != ("fname").isalpha():
+#             flash('Enter a correct first name!')
+            
+#             if ("fname").isalpha() == False:
+#                 flash('Enter a correct first name!')
+    
+
+#     conn.commit()
+
+#     conn.close()
+   
+#     return isalpha([userinput.isalpha() for userinput in userinputs])
+    # return userinput
     
 @app.route("/userinput", methods=["GET","POST"])
 def seeuser():
     if request.method == 'POST':
-        session['userinput'] = request.form['fname']
+        session['userinput'] = request.form[('fname')]
+        # ['userinput']  == ("fname")
+        
+        # if ['userinput']  == ("fname").isalpha():
+        #flash('Enter a correct first name!')
         return render_template("androidapp.html")
 
     return render_template('userinput.html')

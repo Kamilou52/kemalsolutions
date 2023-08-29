@@ -3,14 +3,14 @@
 {% block content %}
 <title>User Input</title>
 <h1> Welcome {{fname}} ! </h1>
-<form action = "/userinput" method = "POST">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" required><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" required>
-    <button type="submit">Envoyer</button>
-    <button type="submit">Annuler</button>
-  </form>
+<form action="/submit" method="POST" onsubmit="return validateUserinput()">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" required /><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" required>
+  <button type="submit" value="Submit">Envoyer</button>
+  <button type="submit" value="Submit">Annuler</button>
+</form>
    <p>
     Our clients are any persons 
    </p>
@@ -31,3 +31,7 @@
     </p>
  <div>
 {% endblock %}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
