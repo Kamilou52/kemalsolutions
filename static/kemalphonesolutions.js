@@ -6,17 +6,20 @@ $(document).ready(function(){
   });
 });
 
-function validateUserinput() {
-  var fname = document.getElementById('fname').value;
-  var regex = /[a-zA-Z_ ]*+$/;
+// function validateUserinput() {
+//   var fname = document.getElementById('fname').value;
+//   var regex = /[a-zA-Z]*+$/;
   
-  if (!regex.test(fname)) {
-    alert('Please enter only alphabetic letters.');
-    return false;
-  }
+//   if (!regex.test(fname)) {
+//     alert('Please enter only alphabetic letters.');
+//     return false;
+//   }
+//   else{
+//     alert('Input successfully!');
   
-  return true;
-}
+//   return true;
+// }
+// }
 
 // const fname = userinput instanceof objectType
 

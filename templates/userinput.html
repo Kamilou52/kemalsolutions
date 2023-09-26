@@ -3,7 +3,7 @@
 {% block content %}
 <title>User Input</title>
 <h1> Welcome {{fname}} ! </h1>
-<form action="/submit" method="POST" onsubmit="return validateUserinput()">
+<form action="/userinput" method="POST" >
   <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname" required /><br>
   <label for="lname">Last name:</label><br>
