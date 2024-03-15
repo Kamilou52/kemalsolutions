@@ -105,10 +105,13 @@ def send():
     
 @app.route("/userinput", methods=["GET","POST"])
 def seeuser():
+    
     if request.method == 'POST':
         session['userinput'] = request.form[('fname')]
+        # error = "Use only alphabetic letters"
         # ['userinput']  == ("fname")
-        
+    # else:
+            # flash("You are success")
         # if ['userinput']  == ("fname").isalpha():
         #flash('Enter a correct first name!')
         return render_template("androidapp.html")
@@ -122,7 +125,7 @@ def searchmodel():
         session.pop('fname', None)
         modele=request.form.get("modele")
         session.pop('modele', None)
-        modeles=request.form.get("modeles")
+        modeles=request.form.get("modeles") 
         session.pop('modeles', None)
         Problems=request.form.get("Problems")
         session.pop('problem', None)
