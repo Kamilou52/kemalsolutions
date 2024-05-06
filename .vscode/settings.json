@@ -1,3 +1,5 @@
 {
-    "explorer.confirmUndo": "verbose"
+    "explorer.confirmUndo": "verbose",
+    "python.analysis.typeCheckingMode": "basic",
+    "diffEditor.maxFileSize": 100
 }
